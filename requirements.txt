@@ -1,5 +1,5 @@
 🛠 Core Features of the First Version (MVP)
-✅ User can write journal entries and save them to a database.
-✅ User can view past journal entries in a readable format.
-✅ Entries are stored with timestamps (so they can be sorted).
+✅ U̶s̶e̶r̶ ̶c̶a̶n̶ ̶w̶r̶i̶t̶e̶ ̶j̶o̶u̶r̶n̶a̶l̶ ̶e̶n̶t̶r̶i̶e̶s̶ ̶a̶n̶d̶ ̶s̶a̶v̶e̶ ̶t̶h̶e̶m̶ ̶t̶o̶ ̶a̶ ̶d̶a̶t̶a̶b̶a̶s̶e̶.̶
+✅ U̶s̶e̶r̶ ̶c̶a̶n̶ ̶v̶i̶e̶w̶ ̶p̶a̶s̶t̶ ̶j̶o̶u̶r̶n̶a̶l̶ ̶e̶n̶t̶r̶i̶e̶s̶ ̶i̶n̶ ̶a̶ ̶r̶e̶a̶d̶a̶b̶l̶e̶ ̶f̶o̶r̶m̶a̶t̶.̶
+✅ E̶n̶t̶r̶i̶e̶s̶ ̶a̶r̶e̶ ̶s̶t̶o̶r̶e̶d̶ ̶w̶i̶t̶h̶ ̶t̶i̶m̶e̶s̶t̶a̶m̶p̶s̶ ̶(̶s̶o̶ ̶t̶h̶e̶y̶ ̶c̶a̶n̶ ̶b̶e̶ ̶s̶o̶r̶t̶e̶d̶)̶.
 ✅ Basic command-line interface (CLI) so users can interact with the app.

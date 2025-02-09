@@ -1,7 +1,6 @@
 import sqlite3
 from datetime import datetime
 
-
 class App:
     def __init__(self):
         self.conn = sqlite3.connect('JournalEntries.db')
@@ -16,25 +15,21 @@ class App:
                 """)
 
     def add_entry(self):
-        entry = input(f"Journal Entry {datetime.now().strftime("%I:%M %p")}: ").rstrip()
+        entry = input(f"Journal Entry {datetime.now().strftime('%I:%M %p')}: ").rstrip()
         with self.conn:
             self.c.execute("INSERT INTO JournalEntries (date, entry, time) VALUES (:date, :entry, :time)", 
                     {'date': datetime.now().strftime("%Y-%m-%d"), 'entry': entry, 'time': datetime.now().strftime("%I:%M %p")})
 
     def display_past_entries(self):
-        date = input('what is the date of the entry you would like see?(0000Y-00M-00D) ')
-        if date != '':
-            self.c.execute("SELECT * FROM JournalEntries WHERE date=:date", {'date': date})
-        else:
-            self.c.execute("SELECT * FROM JournalEntries")
-        
+        self.c.execute("SELECT * FROM JournalEntries ORDER BY id DESC LIMIT 5")
+
         for i, j in enumerate(self.c.fetchall(), 1):
-            print(f"{i}. {j}")
+            print(f"""{i}. {j[1]} "{j[2]}" {j[3]}""")
         print('\n')
 
     def update_entry(self):
-        old_date = input('What is the date of the entry? (Y-M-D)  ').rstrip
-        new_entry = input('What is the new entry?  ' + '\n').rstrip
+        old_date = input('What is the date of the entry? (Y-M-D)  ').rstrip()
+        new_entry = input('What is the new entry?  ' + '\n').rstrip()
 
         with self.conn:
             self.c.execute("UPDATE JournalEntries SET entry = :entry WHERE date = :date", {'date': old_date, 'entry': new_entry})
@@ -62,10 +57,10 @@ class App:
                 self.update_entry()
             elif choice == '4':
                 self.remove_entry()
-            elif choice == 'q' or 'Q':
+            elif choice.lower() == 'q':
                 break
             else:
-                print("❌ Invalid choice. Please enter 1, 2, or 3.")
+                print(f"❌ Invalid choice. Please enter a number between 1 and {len(options)}")
 
 
 if __name__ == '__main__':
